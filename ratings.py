@@ -35,12 +35,14 @@ def add_user_rating(restaurant_ratings):
             print ("\nBad score. Please enter a number.")
             continue
 
-        if rating < 1 or rating > 5:
-            print ("\nBad score. Please enter a score between 1 and 5 inclusive.")
-            continue
+        if 1 <= rating <= 5:
+            print('good score')
+            restaurant_ratings[restaurant.title()] = rating
+            break;
+        else:
+            print("\nBad score. Please enter a score between 1 and 5 inclusive.")
+            
 
-        restaurant_ratings[restaurant.title()] = rating
-        break
 
 def get_user_choice():
     print("\n\nWhat do you want to do?")
